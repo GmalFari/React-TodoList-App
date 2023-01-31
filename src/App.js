@@ -3,6 +3,12 @@ import { useState } from "react";
 import Todo from "./components/Todo";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
+
+function fetchData(url){
+  fetch(url).then((result)=>{
+    console.log(result)
+  })
+}
 const FILTER_MAP = {
   All:() => true,
   Active: (task) => !task.completed,
@@ -16,7 +22,6 @@ function App(props) {
   function toggleTaskCompleted(id) {
     const updatedTasks = tasks.map((task) => {
       if(task.id === id){
-        console.log(task)
         return {...task,completed:!task.completed}
       
       }
@@ -65,6 +70,7 @@ function App(props) {
   }
   return (
     <div className="todoapp stack-large">
+      
       <h1>TodoMatic</h1>
       <Form  addTask={addTask} />
       <div className="filters btn-group stack-exception">

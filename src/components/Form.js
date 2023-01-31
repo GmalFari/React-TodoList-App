@@ -5,7 +5,6 @@ function Form(props) {
     function handelChange(e) {
         setName(e.target.value)
     }
-
     function handleSubmit(e){
         e.preventDefault();
         if(name.length !== 0){

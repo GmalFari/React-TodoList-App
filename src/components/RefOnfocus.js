@@ -7,7 +7,7 @@ export default function TextInputWithFocusButton() {
     };
     return (
         <>
-        <input ref={inputEl} type="text"    />
+        <input ref={inputEl} type="text" />
         <button onClick={onButtonClick} >focus</button>
         </>
     )
